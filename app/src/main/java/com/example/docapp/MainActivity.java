@@ -1,41 +1,48 @@
 package com.example.docapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.os.Bundle;
-import android.content.Intent;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.docapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView orasTxt;
 
-    private Button nextBtn;
+    ActivityMainBinding binding;
 
-    String oras;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        replaceFragment(new SearchFragment());
 
-        orasTxt = findViewById(R.id.cityTxt);
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.search:
+                    replaceFragment(new SearchFragment());
+                    break;
+                case R.id.appointments:
+                    replaceFragment(new AppointmentsFragment());
+                    break;
+                case R.id.profile:
+                    replaceFragment(new ProfileFragment());
+                    break;
 
-        nextBtn = findViewById(R.id.nextBtn);
-        nextBtn.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                if (orasTxt.getText().toString().equals("")) {
-                    Toast.makeText(MainActivity.this, "Enter a city", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    oras = orasTxt.getText().toString();
-                    Intent intent = new Intent(MainActivity.this, ListActivity.class);
-                    intent.putExtra("oras", oras);
-                    startActivityForResult(intent, 1);
-                }
             }
+
+            return true;
         });
+    }
+
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.commit();
     }
 }
