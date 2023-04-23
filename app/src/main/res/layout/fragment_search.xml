@@ -10,37 +10,49 @@
     <TextView
         android:layout_width="100dp"
         android:layout_height="30dp"
-        android:text="Select city:"
+        android:text="Search:"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.349" />
+        app:layout_constraintVertical_bias="0.272" />
 
     <Button
         android:id="@+id/nextBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NEXT"
+        android:layout_width="104dp"
+        android:layout_height="43dp"
+        android:drawableTop="@drawable/baseline_search_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.568" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/cityTxt"
         android:layout_width="250dp"
         android:layout_height="49dp"
-        android:hint="Enter a city"
+        android:hint="City"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintVertical_bias="0.341" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/specializationTxt"
+        android:layout_width="250dp"
+        android:layout_height="49dp"
+        android:hint="Specialization"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.434" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
