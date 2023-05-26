@@ -6,53 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".SearchFragment">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:src="@drawable/search_pic"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:text="Search:"
-        android:textSize="20dp"
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="City"
+        app:startIconDrawable="@drawable/baseline_location_on_24"
+        app:helperText="*Required"
+        app:helperTextTextColor="#FF0000"
+        app:endIconMode="clear_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintVertical_bias="0.62" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cityTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Specialization"
+        app:helperTextTextColor="#FF0000"
+        app:endIconMode="clear_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/specializationTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/nextBtn"
-        android:layout_width="104dp"
-        android:layout_height="43dp"
-        android:drawableTop="@drawable/baseline_search_24"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintVertical_bias="0.85" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/cityTxt"
-        android:layout_width="250dp"
-        android:layout_height="49dp"
-        android:hint="City"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.341" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/specializationTxt"
-        android:layout_width="250dp"
-        android:layout_height="49dp"
-        android:hint="Specialization"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

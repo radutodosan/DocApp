@@ -14,19 +14,19 @@ import com.example.docapp.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 
-public class ListAdapter extends ArrayAdapter<Doc> {
+public class ListAdapter2 extends ArrayAdapter<Appointment> {
 
 
 
-    public ListAdapter(Context context, ArrayList<Doc> docArrayList){
-        super(context, R.layout.list_item, docArrayList);
+    public ListAdapter2(Context context, ArrayList<Appointment> appointmentArrayList){
+        super(context, R.layout.list_item, appointmentArrayList);
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        Doc doc = getItem(position);
+        Appointment appointment = getItem(position);
 
         if(convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
@@ -34,11 +34,11 @@ public class ListAdapter extends ArrayAdapter<Doc> {
 
         TextView docName = convertView.findViewById(R.id.clinicName);
         TextView info = convertView.findViewById(R.id.info);
-        TextView location = convertView.findViewById(R.id.location);
+        TextView date = convertView.findViewById(R.id.location);
 
-        docName.setText(doc.getName());
-        info.setText(doc.getSpecialization());
-        location.setText(doc.getLocation());
+        docName.setText(appointment.getDocName());
+        info.setText(appointment.getSpecialization());
+        date.setText(appointment.getDate());
 
         return convertView;
     }

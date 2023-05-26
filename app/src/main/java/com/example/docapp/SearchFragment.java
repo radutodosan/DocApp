@@ -1,5 +1,8 @@
 package com.example.docapp;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -18,7 +21,7 @@ public class SearchFragment extends Fragment {
 
     private Button nextBtn;
 
-    String oras;
+    String uname;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,8 +30,10 @@ public class SearchFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_search, container, false);
 
+
         orasTxt = view.findViewById(R.id.cityTxt);
         specializationTxt = view.findViewById(R.id.specializationTxt);
+
 
         nextBtn = view.findViewById(R.id.nextBtn);
         nextBtn.setOnClickListener(new View.OnClickListener(){
