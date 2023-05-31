@@ -54,7 +54,6 @@ public class ListFragment extends Fragment {
         for(int i = 0; i < name.size(); i++){
             if(searchCity(location.get(i), orasSearch) && (specSearch.equals("") || specSearch.equals(specialization.get(i)) || specialization.get(i).equals("General"))){
                 Doc doc = new Doc(name.get(i), specialization.get(i), location.get(i));
-                searchResults += location.get(i) + " ";
                 docArrayList.add(doc);
             }
 
